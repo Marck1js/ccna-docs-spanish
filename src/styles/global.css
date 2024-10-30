@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+
+    background-color: #23262F;
+}
+
+
+
+
+@layer utilities {
+
+    /* Search estilos nav */
+    .search {
+        @apply flex items-center cursor-pointer h-[40px] w-[300px] bg-[#17181c] rounded-[8px] border-[1px] border-solid border-[#484848] hover:border-[#fff] overflow-hidden;
+    }
+
+    .search input {
+        @apply flex-1 h-full bg-inherit text-white bg-inherit  w-full px-[10px] focus:outline-none
+    }
+
+}

@@ -1,0 +1,27 @@
+---
+import Search from "./ui/Search.astro";
+import Language from '../assets/chevronDown.svg'
+
+---
+
+<div
+    class="h-[64px] flex justify-between items-center bg-slate-800 top-0 sticky z-[1000]"
+>
+    <div class="logo w-[320px] flex justify-center items-center">
+        <p class="text-white font-bold text-[24px] cursor-pointer">CCNA</p>
+    </div>
+    <Search/>
+    <div class="flex-1 flex justify-end mr-[20px]">
+        <div class="settings w-[200px] bg-emerald-400 h-[20px]">
+            <button>
+                <span>Oscuro</span>
+
+            </button>
+            <button>
+                <span>Español</span>   
+                <!-- <Language/> -->
+            </button>
+
+        </div>
+    </div>
+</div>

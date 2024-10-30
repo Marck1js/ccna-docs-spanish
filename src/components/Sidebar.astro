@@ -1,0 +1,17 @@
+---
+import { sidebarConfig } from "../config/sidebarConfig";
+import Acordeon from "./ui/Acordeon.astro";
+import TagA from "./ui/TagA.astro";
+---
+
+<div class="w-fit py-[20px]">
+    {
+        sidebarConfig.map((section) => (
+            <Acordeon title={section.name}>
+                {section.tags.map((tag) => (
+                    <TagA title={tag} />
+                ))}
+            </Acordeon>
+        ))
+    }
+</div>
