@@ -1,6 +1,6 @@
 ---
 import Search from "./ui/Search.astro";
-import Language from '../assets/chevronDown.svg'
+import Icon from "../lib/Icon.astro";
 
 ---
 
@@ -12,14 +12,16 @@ import Language from '../assets/chevronDown.svg'
     </div>
     <Search/>
     <div class="flex-1 flex justify-end mr-[20px]">
-        <div class="settings w-[200px] bg-emerald-400 h-[20px]">
-            <button>
-                <span>Oscuro</span>
-
+        <div class="settings w-[200px] h-[30px] flex gap-2 items-center justify-between">
+            <button class="flex items-center gap-1">
+                <Icon  src="/icons/dark.svg" alt="imagen"/>
+                <span class="light-span">Oscuro</span>
             </button>
-            <button>
-                <span>Español</span>   
-                <!-- <Language/> -->
+            <button class="flex items-center gap-1">
+                <Icon  src="/icons/language.svg" alt="imagen"/>
+                <span class="light-span">Español</span>   
+                <Icon  src="/icons/chevronDown.svg" alt="imagen"/>
+                
             </button>
 
         </div>

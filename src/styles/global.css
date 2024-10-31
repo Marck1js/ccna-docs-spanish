@@ -27,4 +27,8 @@ html {
         @apply flex-1 h-full bg-inherit text-white bg-inherit  w-full px-[10px] focus:outline-none
     }
 
+    .light-span {
+        @apply text-white
+    }
+
 }
