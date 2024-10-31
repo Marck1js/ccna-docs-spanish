@@ -8,6 +8,12 @@ export const sidebarConfig = [
       'Tipos de redes (LAN, WAN, etc.)',
       'Dirección IP y subredes',
     ],
+    paths: [
+      '/fundamentos/conceptos-basicos-de-redes',
+      '/fundamentos/modelos-osi-y-tcpip',
+      '/fundamentos/tipos-de-redes',
+      '/fundamentos/direccion-ip-subredes'
+    ]
   },
   {
     name: 'Network Access',
@@ -17,6 +23,12 @@ export const sidebarConfig = [
       'Troncalización de VLANs',
       'Protocolos de acceso (STP, RSTP)',
     ],
+    paths: [
+      '/network-access/configuracion-de-switches',
+      '/network-access/vlans-y-su-funcionamiento',
+      '/network-access/trunking',
+      '/network-access/protocolos-de-acceso'
+    ]
   },
   {
     name: 'IP Connectivity',
@@ -26,6 +38,12 @@ export const sidebarConfig = [
       'Concepto de rutas y tablas de enrutamiento',
       'Direcciones IP públicas y privadas',
     ],
+    paths: [
+      '/ip-connectivity/enrutamiento-estatico-y-dinamico',
+      '/ip-connectivity/protocolos-de-enrutamiento',
+      '/ip-connectivity/concepto-de-rutas-y-tablas-de-enrutamiento',
+      '/ip-connectivity/direcciones-ip-publicas-y-privadas'
+    ]
   },
   {
     name: 'IP Services',

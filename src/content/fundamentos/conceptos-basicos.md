@@ -1,3 +1,8 @@
+---
+layout: /../pages/fundamentos/conceptos-basicos-de-redes
+
+---
+
 # Conceptos Básicos de Redes
 
 Las redes son un conjunto de dispositivos interconectados que pueden comunicarse entre sí y compartir recursos. En este documento, exploraremos los conceptos fundamentales que forman la base de la tecnología de redes.

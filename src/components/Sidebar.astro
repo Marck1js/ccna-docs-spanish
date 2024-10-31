@@ -8,8 +8,8 @@ import TagA from "./ui/TagA.astro";
     {
         sidebarConfig.map((section) => (
             <Acordeon title={section.name}>
-                {section.tags.map((tag) => (
-                    <TagA title={tag} />
+                {section.tags.map((tag, index) => (
+                    <TagA title={tag} href={section.paths && section.paths[index]} />
                 ))}
             </Acordeon>
         ))
