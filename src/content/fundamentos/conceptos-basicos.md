@@ -1,6 +1,5 @@
 ---
-layout: /../pages/fundamentos/conceptos-basicos-de-redes
-
+title: Conceptos basicos de redes
 ---
 
 # Conceptos Básicos de Redes

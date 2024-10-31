@@ -3,47 +3,48 @@ const { title = "Comienza aqui" } = Astro.props;
 ---
 
 <details
-    id="smry"
-    class="flex flex-col cursor-pointer select-none w-[300px] ml-[10px] my-[5px]"
+  open
+  id="smry"
+  class="flex flex-col cursor-pointer select-none w-[300px] ml-[10px] my-[5px]"
 >
-    <summary
-        class="flex justify-between items-center capitalize text-white font-serif min-h-[30px] h-auto text-[16px] font-bold list-none"
-    >
-        <p class="pl-[10px]">{title}</p>
-        <div class="icon">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                ><path fill="#ffffff" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"
-                ></path></svg
-            >
-        </div>
-    </summary>
-    <div
-        class="pl-[10px] flex flex-col bg-inherit ml-[20px] border-l-[1px] border-solid border-[#fff] my-[5px]"
-    >
-        <slot />
+  <summary
+    class="flex justify-between items-center capitalize text-black font-serif min-h-[30px] h-auto text-[16px] font-bold list-none"
+  >
+    <p class="pl-[10px]">{title}</p>
+    <div class="icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        ><path fill="#000" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"
+        ></path></svg
+      >
     </div>
+  </summary>
+  <div
+    class="pl-[10px] flex flex-col bg-inherit ml-[20px] border-l-[1px] border-solid border-[#fff] my-[5px]"
+  >
+    <slot />
+  </div>
 </details>
 
 <script>
-    const detail = document.querySelector("#smry") as HTMLDetailsElement;
+  const detail = document.querySelector("#smry") as HTMLDetailsElement;
 
-    detail.addEventListener("click", (e) => {
-        console.log(e);
-    });
+  detail.addEventListener("click", (e) => {
+    console.log(e);
+  });
 </script>
 
 <style>
-    details > summary .icon {
-        transform: rotate(0deg);
-        transition: transform 100ms linear;
-    }
+  details > summary .icon {
+    transform: rotate(0deg);
+    transition: transform 100ms linear;
+  }
 
-    details[open] > summary .icon {
-        transform: rotate(90deg);
-        transition: transform 100ms linear;
-    }
+  details[open] > summary .icon {
+    transform: rotate(90deg);
+    transition: transform 100ms linear;
+  }
 </style>

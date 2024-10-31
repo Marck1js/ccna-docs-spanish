@@ -2,33 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 html {
-
-    background-color: #23262F;
+  background-color: #23262f;
 }
 
-
-
-
 @layer utilities {
+  /* Search estilos nav */
+  .search {
+    @apply flex items-center cursor-pointer h-[40px] w-[300px] bg-[#fff] rounded-[8px] border-[1px] border-solid border-[#C1C3C8] hover:border-[#000] overflow-hidden;
+  }
 
-    /* Search estilos nav */
-    .search {
-        @apply flex items-center cursor-pointer h-[40px] w-[300px] bg-[#17181c] rounded-[8px] border-[1px] border-solid border-[#484848] hover:border-[#fff] overflow-hidden;
-    }
+  .search input {
+    @apply flex-1 h-full bg-inherit w-full px-[10px] focus:outline-none;
+  }
 
-    .search input {
-        @apply flex-1 h-full bg-inherit text-white bg-inherit  w-full px-[10px] focus:outline-none
-    }
+  .light-span {
+    @apply text-white;
+  }
 
-    .light-span {
-        @apply text-white
-    }
+  /* Details for MarkdownPostLayout Component */
+  .borders {
+    @apply border-r-[1px] border-[#edeef3];
+  }
 
+  .borders h1 {
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: start;
+    font-style: italic;
+  }
+  .borders h1::before {
+    content: "# ";
+  }
 }

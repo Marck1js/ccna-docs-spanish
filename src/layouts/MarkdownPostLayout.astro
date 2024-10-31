@@ -1,0 +1,15 @@
+---
+import "../styles/global.css";
+const { title } = Astro.props;
+---
+
+<div class="border-r-[1px] border-gray-200 h-full overflow-auto">
+  <div class="border-b-[1px] border-gray-200">
+    <h1 class="w-[720px] mx-auto my-0 h-[100px] flex items-center text-[42px] font-bold">
+      {title}
+    </h1>
+  </div>
+  <div class="mx-auto my-0 self-center w-[720px] justify-end py-[20px]">
+    <slot />
+  </div>
+</div>

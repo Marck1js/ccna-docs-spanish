@@ -9,7 +9,7 @@ export const sidebarConfig = [
       'Dirección IP y subredes',
     ],
     paths: [
-      '/fundamentos/conceptos-basicos-de-redes',
+      '/fundamentos/conceptos-basicos',
       '/fundamentos/modelos-osi-y-tcpip',
       '/fundamentos/tipos-de-redes',
       '/fundamentos/direccion-ip-subredes'
@@ -25,7 +25,7 @@ export const sidebarConfig = [
     ],
     paths: [
       '/network-access/configuracion-de-switches',
-      '/network-access/vlans-y-su-funcionamiento',
+      '/network-access/vlan-funcionamiento',
       '/network-access/trunking',
       '/network-access/protocolos-de-acceso'
     ]

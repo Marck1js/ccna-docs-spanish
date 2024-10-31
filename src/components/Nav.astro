@@ -5,21 +5,21 @@ import Icon from "../lib/Icon.astro";
 ---
 
 <div
-    class="h-[64px] flex justify-between items-center bg-slate-800 top-0 sticky z-[1000]"
+    class="h-[64px] flex justify-between items-center bg-[#F6F7F9] top-0 sticky z-[1000] border-b-[1px] border-[#EDEEF3]"
 >
     <div class="logo w-[320px] flex justify-center items-center">
-        <a href="/" class="text-white font-bold text-[24px] cursor-pointer">CCNA</a>
+        <a href="/" class="font-bold text-[24px] cursor-pointer">CCNA</a>
     </div>
     <Search/>
     <div class="flex-1 flex justify-end mr-[20px]">
-        <div class="settings w-[200px] h-[30px] flex gap-2 items-center justify-between">
+        <div class="settings w-[200px] h-[30px] flex gap-2 items-center justify-between mr-[20px]">
             <button class="flex items-center gap-1">
                 <Icon  src="/icons/dark.svg" alt="imagen"/>
-                <span class="light-span">Oscuro</span>
+                <span class="">Oscuro</span>
             </button>
-            <button class="flex items-center gap-2">
+            <button class="flex items-center gap-1">
                 <Icon  src="/icons/language.svg" alt="imagen"/>
-                <span class="light-span">Español</span>   
+                <span class="">Español</span>   
                 <Icon  src="/icons/chevronDown.svg" alt="imagen"/>
                 
             </button>

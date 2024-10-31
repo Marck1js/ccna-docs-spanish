@@ -3,17 +3,7 @@ const { title, href } = Astro.props;
 ---
 
 <a
-    href={href}
-    class="min-h-[30px] h-auto flex items-center py-[4px] rounded-md pl-[10px] text-[#c1c3c8] font-bold text-[14px]"
-    >{title}</a 
+  href={href}
+  class="min-h-[30px] h-auto flex items-center py-[4px] rounded-md pl-[10px] bg-white active:bg-[#3d50f5] active:text-white text-[#353841] hover:text-gray-500 font-bold text-[14px]"
+  >{title}</a
 >
-
-<style>
-    a:active {
-        background-color: #b3c7ff;
-        color: #17264f;
-    }
-    a:hover {
-        color: #fff;
-    }
-</style>

@@ -4,7 +4,7 @@ import Acordeon from "./ui/Acordeon.astro";
 import TagA from "./ui/TagA.astro";
 ---
 
-<div class="w-fit py-[20px]">
+<div class="w-fit py-[20px] h-auto  pr-[10px] overflow-auto border-r-[1px] border-gray-100">
     {
         sidebarConfig.map((section) => (
             <Acordeon title={section.name}>
