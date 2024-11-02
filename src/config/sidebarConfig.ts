@@ -39,7 +39,7 @@ export const sidebarConfig = [
       'Direcciones IP públicas y privadas',
     ],
     paths: [
-      '/ip-connectivity/enrutamiento-estatico-y-dinamico',
+      '/ip-connectivity/enrutamiento-estatico-dinamico',
       '/ip-connectivity/protocolos-de-enrutamiento',
       '/ip-connectivity/concepto-de-rutas-y-tablas-de-enrutamiento',
       '/ip-connectivity/direcciones-ip-publicas-y-privadas'
