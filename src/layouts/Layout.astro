@@ -4,9 +4,11 @@ import Sidebar from "../components/Sidebar.astro";
 
 interface Props {
   title: string;
+  hideSidebar?: boolean;
+  noAside?: boolean;
 }
 
-const { title }: Props = Astro.props;
+const { title, hideSidebar = false, noAside = false }: Props = Astro.props;
 ---
 
 <!doctype html>
@@ -22,13 +24,18 @@ const { title }: Props = Astro.props;
   <body>
     <Nav />
     <div class="flex h-fix">
-      <Sidebar />
+      {hideSidebar ? null : <Sidebar />}
+
       <div class="flex-1 overflow-auto">
         <slot />
       </div>
-      <div class="w-[500px]">
-        <slot name="aside" />
-      </div>
+      {
+        noAside ? null : (
+          <div class="w-[500px]">
+            <slot name="aside" />
+          </div>
+        )
+      }
     </div>
   </body>
   <style is:global>

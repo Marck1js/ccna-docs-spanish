@@ -1,0 +1,46 @@
+/* src/styles/md.css */
+
+.markdown-content h1 {
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 2rem;
+    margin: 25px 0;
+}
+
+.markdown-content pre {
+    background-color: #cf2222;
+    /* Fondo oscuro para el bloque de código */
+    color: #f8f8f2;
+    /* Color claro para el texto */
+    border-radius: 5px;
+    padding: 1em;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.markdown-content code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #f8f8f2;
+    /* Color del texto dentro de <code> */
+}
+
+/* Estilos de resaltado de sintaxis */
+.markdown-content .token.keyword {
+    color: #66d9ef;
+    /* Colores específicos de palabras clave */
+}
+
+.markdown-content .token.function {
+    color: #a6e22e;
+}
+
+.markdown-content .token.string {
+    color: #e6db74;
+}
+
+.markdown-content .token.comment {
+    color: #fed505;
+    font-style: italic;
+}
