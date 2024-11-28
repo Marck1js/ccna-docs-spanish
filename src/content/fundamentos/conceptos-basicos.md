@@ -2,7 +2,7 @@
 title: Conceptos basicos de redes
 ---
 
-# Conceptos Básicos de Redes
+<!-- # Conceptos Básicos de Redes -->
 
 Las redes son un conjunto de dispositivos interconectados que pueden comunicarse entre sí y compartir recursos. En este documento, exploraremos los conceptos fundamentales que forman la base de la tecnología de redes.
 
@@ -61,3 +61,30 @@ Las **subredes** permiten dividir una red mayor en redes más pequeñas, mejoran
 ## Conclusión
 
 Comprender estos conceptos básicos de redes es fundamental para cualquier profesional que desee trabajar en el ámbito de las tecnologías de la información y la comunicación. Este conocimiento proporciona una base sólida para avanzar hacia temas más avanzados en redes y en la preparación para certificaciones como el CCNA 200-301.
+
+
+
+<!--
+
+*Imagen tomada de [https://kevin-linares.blogspot.com]()* -->
+
+![Descripción de la imagen](/img/subredes-prefijo-16.jpg)
+
+<p class="text-sm text-gray-600 italic mt-4">
+  Imagen tomada de <a target='_blank' href="https://kevin-linares.blogspot.com/2017/05/division-de-redes-IP-en-subredes-Division-de-una-red-IPv4-en-subredes-Division-de-subredes-con-prefijos-16-y-8.html" class="text-blue-500 hover:text-blue-700">https://kevin-linares.blogspot.com</a>.
+</p>
+
+
+## Secuencia de arranque del Switch
+
+Carga un programa de autodiagnostico al encender, llamado Post
+almacenado en la memoria ROM
+
+
+# Documentacion Externa
+
+<p class="text-sm text-gray-600 italic mt-4">
+  # <a target='_blank' href="https://www.cisco.com/c/es_mx/support/docs/interfaces-modules/network-modules/82288-es-mod-config.html" class="text-blue-500 hover:text-blue-700">Cisco Support</a>.
+</p>
+
+

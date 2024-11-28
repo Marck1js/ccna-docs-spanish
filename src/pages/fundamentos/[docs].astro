@@ -27,6 +27,7 @@ const { Content } = await entry.render();
   <MarkdownPostLayout title={entry.data?.title}>
     <Content />
   </MarkdownPostLayout>
+  <div class="mb-[100px]"></div>
   <!-- Este content se borra, solo esta para ver las diferencias con el markdown -->
   <p slot="aside">esto es un aside</p>
 </Layout>
