@@ -1,6 +1,9 @@
 ---
 import Nav from "../components/Nav.astro";
 import Sidebar from "../components/Sidebar.astro";
+const {pathname}  = Astro.url
+
+console.log(`texto: ${pathname}`)
 
 interface Props {
   title: string;
@@ -12,7 +15,7 @@ const { title, hideSidebar = false, noAside = false }: Props = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -21,17 +24,17 @@ const { title, hideSidebar = false, noAside = false }: Props = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-white dark:bg-dark-main">
     <Nav />
-    <div class="flex h-fix">
-      {hideSidebar ? null : <Sidebar />}
+    <div class="flex h-fix max-w-[1410px] my-0 mx-auto ">
+      {hideSidebar ? null : <Sidebar pathname={pathname}/>}
 
       <div class="flex-1 overflow-auto">
         <slot />
       </div>
       {
         noAside ? null : (
-          <div class="w-[500px]">
+          <div class="aside-width">
             <slot name="aside" />
           </div>
         )
@@ -56,7 +59,6 @@ const { title, hideSidebar = false, noAside = false }: Props = Astro.props;
 
     html {
       font-family: system-ui, sans-serif;
-      background: #fff;
     }
 
     code {

@@ -14,7 +14,7 @@ html {
 @layer utilities {
   /* Search estilos nav */
   .search {
-    @apply flex items-center cursor-pointer h-[40px] w-[300px] bg-[#fff] rounded-[8px] border-[1px] border-solid border-[#C1C3C8] hover:border-[#000] overflow-hidden;
+    @apply hidden md:flex items-center cursor-pointer h-[40px] w-[300px] bg-[#fff] rounded-[8px] border-[1px] border-solid border-[#C1C3C8] hover:border-[#000] overflow-hidden;
   }
 
   .search input {
@@ -39,5 +39,13 @@ html {
   }
   .borders h1::before {
     content: "# ";
+  }
+
+  .sidebar-width {
+    @apply hidden lg:block;
+  }
+
+  .aside-width {
+    @apply hidden xl2:block w-[13rem];
   }
 }

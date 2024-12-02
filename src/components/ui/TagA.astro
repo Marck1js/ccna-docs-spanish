@@ -1,10 +1,18 @@
 ---
-const { title, href, data } = Astro.props;
+const { title, href, pathname } = Astro.props;
+
+const currentSite = href == pathname
+
 ---
 
 <a
   href={href}
-  class={`min-h-[30px] h-auto flex items-center py-[4px] rounded-md pl-[10px] ${data ? "bg-[#3d50f5]" : "bg-white"} active:bg-[#3d50f5] active:text-white text-[#353841] hover:text-gray-500 font-bold text-[14px]`}
+  class={`text-option dark:text-dark-option ${currentSite ? 'bg-active text-white  dark:bg-dark-active dark:text-white font-bold': null } py-[4px] pl-[10px] rounded-md`}
 >
   {title}
 </a>
+
+
+
+<!-- class={` hover:text-gray-500  my-[2px] min-h-[30px] h-auto flex items-center py-[4px] rounded-md pl-[10px]
+  ${currentSite ? "bg-[#3d50f5] text-white hover:text-white" : "bg-white text-black"} active:bg-[#3d50f5] active:text-white text-[#353841] font-bold text-[14px]`} -->

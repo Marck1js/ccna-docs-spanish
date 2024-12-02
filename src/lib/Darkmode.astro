@@ -1,0 +1,35 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<button id="theme-toggle" class="flex items-center gap-1">
+  <Icon src="/icons/dark.svg" alt="imagen" />
+  <span class="">Oscuro</span>
+</button>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("theme-toggle");
+
+    // Recuperar el tema desde localStorage
+    const savedTheme = localStorage.getItem("theme");
+
+    // Si hay un tema guardado, aplicarlo
+    if (savedTheme) {
+      document.documentElement.classList.add(savedTheme);
+    }
+
+    // Alternar el tema y guardar la preferencia en localStorage
+    toggleButton?.addEventListener("click", () => {
+      const currentTheme = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      // Cambiar el tema en el HTML
+      document.documentElement.classList.toggle("dark");
+
+      // Guardar la nueva preferencia en localStorage
+      localStorage.setItem("theme", newTheme);
+    });
+  });
+</script>

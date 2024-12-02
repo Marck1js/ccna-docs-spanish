@@ -4,13 +4,13 @@ import '../styles/markdown.css'
 const { title } = Astro.props;
 ---
 
-<div class="border-r-[1px] border-gray-200 h-full overflow-auto">
-  <div class="border-b-[1px] border-gray-200">
-    <h1 class="w-full max-w-[720px] mx-auto my-0 min-h-[100px] h-auto flex items-center text-[42px] font-bold">
+<div class="xl2:border-r-[1px] border-border dark:border-dark-border h-full overflow-auto mx-[5px]">
+  <div class="border-b-[1px] border-border dark:border-dark-border">
+    <h1 class="min-w-full text-center justify-center mx-auto my-0 min-h-[100px] h-auto flex items-center text-[42px] font-bold text-primary dark:text-dark-primary">
       {title}
     </h1>
   </div>
-  <div class="mx-auto my-0 self-center max-w-[720px] w-full justify-end py-[20px] markdown-content">
+  <div class="mx-auto my-0 px-[10px] self-center w-full justify-end py-[20px] markdown-content">
     <slot />
   </div>
 </div>

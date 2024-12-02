@@ -1,11 +1,27 @@
 /* src/styles/md.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.markdown-content h1 {
-    color: #000;
-    font-size: 25px;
-    font-weight: bold;
-    padding-left: 2rem;
-    margin: 25px 0;
+@layer utilities {
+    /* Search estilos nav */
+    .markdown-content h1 {
+      @apply  text-[30px] font-bold pl-[2rem] my-[25px];
+    }
+    .markdown-content h1,
+    .markdown-content h2,
+    .markdown-content h3,
+    .markdown-content h4,
+    .markdown-content h5,
+    .markdown-content h6,
+    .markdown-content p,
+    .markdown-content ul,
+    .markdown-content li,
+    .markdown-content table,
+
+    .markdown-content strong {
+        @apply text-primary dark:text-dark-primary;
+      }
 }
 
 .markdown-content pre {
