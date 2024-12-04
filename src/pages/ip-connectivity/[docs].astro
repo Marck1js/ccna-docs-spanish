@@ -6,7 +6,7 @@ import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection("ip-connectivity");
-    console.log(blogEntries);
+   
 
     return blogEntries.map((entry) => ({
         params: { docs: entry.slug },

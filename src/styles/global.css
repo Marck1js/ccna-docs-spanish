@@ -48,4 +48,12 @@ html {
   .aside-width {
     @apply hidden xl2:block w-[13rem];
   }
+
+  .float-sidebar-width {
+    @apply hidden max-lg:block
+  }
+
+  .darkmode {
+    @apply transition-colors duration-300 ease-in-out text-primary dark:text-dark-primary;
+  }
 }

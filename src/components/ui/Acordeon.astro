@@ -1,4 +1,6 @@
 ---
+import Svg from "../../lib/Svg.astro";
+
 const { title = "Comienza aqui" } = Astro.props;
 ---
 
@@ -10,16 +12,9 @@ const { title = "Comienza aqui" } = Astro.props;
   <summary
     class="flex justify-between items-center capitalize text-black font-serif min-h-[30px] h-auto text-[16px] font-bold list-none"
   >
-    <p class="pl-[10px] text-sky-300">{title}</p>
+    <p class="pl-[10px] text-primary dark:text-dark-primary">{title}</p>
     <div class="icon">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        ><path fill="#000" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"
-        ></path></svg
-      >
+        <Svg name="chevronDown" iconStyle="darkmode"/>
     </div>
   </summary>
   <div

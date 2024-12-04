@@ -10,8 +10,6 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection("fundamentos");
   // Devuelvo y creo las rutas dinamicas, de acuerdo a los archivo .md, y paso como props
   // dicho archivo .md
-
-  blogEntries.forEach((e) => console.log({ params: { docs: e.slug } }));
   return blogEntries.map((entry) => ({
     params: { docs: entry.slug },
     props: { entry },
@@ -27,7 +25,6 @@ const { Content } = await entry.render();
   <MarkdownPostLayout title={entry.data?.title}>
     <Content />
   </MarkdownPostLayout>
-  <div class="mb-[100px]"></div>
   <!-- Este content se borra, solo esta para ver las diferencias con el markdown -->
   <p slot="aside">Welcome to this page</p>
 </Layout>

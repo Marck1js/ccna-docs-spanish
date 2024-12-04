@@ -1,0 +1,19 @@
+---
+import {Icon} from 'astro-icon/components'
+
+const { src, alt, width = 20, height = 20, style, name = 'language', iconStyle } = Astro.props;
+
+interface SvgIconProps {
+  src?: `${string}.svg`; // Especifica que `icon` debe ser un string que termine en `.svg`
+  alt?: string;
+  width?: number;
+  height?: number;
+  style?: string;
+}
+---
+
+<div
+  class={`w-[30px] h-[30px] flex justify-center items-center overflow-hidden ${style} `}
+>
+  <Icon name={name} class={iconStyle}/>
+</div>

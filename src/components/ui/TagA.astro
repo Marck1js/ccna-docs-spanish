@@ -7,7 +7,7 @@ const currentSite = href == pathname
 
 <a
   href={href}
-  class={`text-option dark:text-dark-option ${currentSite ? 'bg-active text-white  dark:bg-dark-active dark:text-white font-bold': null } py-[4px] pl-[10px] rounded-md`}
+  class={`text-option dark:text-dark-option ${currentSite ? 'bg-active text-white focus:bg-inherit  dark:focus:bg-inherit dark:bg-dark-active dark:text-white font-bold  hover:bg-active': null } hover:text-main dark:hover:text-dark-main hover:bg-slate-400 dark:hover:bg-[#2c294a]  py-[4px] pl-[10px] rounded-md my-[2px]`}
 >
   {title}
 </a>

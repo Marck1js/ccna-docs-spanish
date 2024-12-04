@@ -1,10 +1,11 @@
 ---
-import Icon from "./Icon.astro";
+import Svg from "./Svg.astro";
 ---
 
 <button id="theme-toggle" class="flex items-center gap-1">
-  <Icon src="/icons/dark.svg" alt="imagen" />
-  <span class="">Oscuro</span>
+  <Svg name="dark" iconStyle="darkmode"></Svg>
+  
+  <span class="dark:text-dark-primary">Oscuro</span>
 </button>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
