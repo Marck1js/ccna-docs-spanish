@@ -25,8 +25,10 @@ const { title, hideSidebar = false, noAside = false }: Props = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-[#E4EBFA] dark:bg-dark-main">
-    <Nav />
-    <FloatSidebar pathname={pathname}/>
+    <div class="top-0 sticky z-[1000]">
+      <Nav />
+      <FloatSidebar pathname={pathname}/>
+    </div>
     <div class="flex h-fix max-w-[1410px] my-0 mx-auto ">
       {hideSidebar ? null : <Sidebar pathname={pathname}/>}
 

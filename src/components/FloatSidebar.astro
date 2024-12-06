@@ -1,42 +1,80 @@
 ---
 import Svg from "../lib/Svg.astro";
-const {pathname} = Astro.props
+import { sidebarConfigTopic } from "../config/sidebarConfig";
+const { pathname } = Astro.props;
+
+interface Topic {
+  name: string;
+  path?: string;
+  route: {
+    concept: {
+      label?: string;
+      path?: string;
+    };
+  }[];
+}
 ---
 
-<nav class="sticky float-sidebar-width h-[40px] bg-main dark:bg-dark-main border-b-[1px] border-border dark:border-dark-border">
-    <details class="">
-        <summary class=" list-none flex gap-2 items-center h-[40px] px-[20px]">
-            <div class="  h-[30px] flex items-center gap-2 border-[1px] border-border pl-[10px] rounded-md">
-                     <span class="darkmode"> En esta pagina</span>
-                <div class="icon">
-                    <Svg name="chevronDown" iconStyle="darkmode"/>
-                </div>
-            </div>
-            <span class="darkmode">{pathname}</span>
-        </summary>
-        <div class="fixed w-full">
-            <ul class="bg-main dark:bg-dark-main">
-                <li class=" border-b-[1px] border-border dark:border-dark-border pb-[2px]">
-                    <a href="/fundamentos/conceptos-basicos">Fundamentals of Networking</a>
-                </li>
-                <li class=" border-b-[1px] border-border dark:border-dark-border pb-[2px]">B</li>
-                <li class=" border-b-[1px] border-border dark:border-dark-border pb-[2px]">C</li>
-                <li class=" border-b-[1px] border-border dark:border-dark-border pb-[2px]">D</li>
-                <li class=" border-b-[1px] border-border dark:border-dark-border pb-[2px]">E</li>
-           
-            </ul>
+<nav
+  class="sticky float-sidebar-width h-[40px] bg-main dark:bg-dark-main border-b-[1px] border-border dark:border-dark-border"
+>
+  <details class="">
+    <summary class="list-none flex gap-2 items-center h-[40px] px-[20px]">
+      <div
+        class="h-[30px] flex items-center gap-2 border-[1px] border-border pl-[10px] rounded-md"
+      >
+        <span class="darkmode"> Aqui </span>
+        <div class="icon">
+          <Svg name="chevronDown" iconStyle="darkmode" />
         </div>
-    </details>
+      </div>
+      <span class="darkmode">{pathname}</span>
+    </summary>
+    <div class="fixed w-full">
+      {
+        sidebarConfigTopic?.map((section) => (
+          <ul class="bg-main dark:bg-dark-main">
+            <li class="">
+              <a
+                href={section.path ? section.path : "#"}
+                class="px-[10px] flex items-center text-primary dark:text-dark-primary h-[40px] border-b border-border"
+              >
+                {section.name}
+              </a>
+              <ul class="px-[25px]">
+                {section.route?.map(({ concept }) => (
+                  <li class="flex justify-between items-center h-[45px] border-b border-main-purple-hover">
+                    <a href={concept.path} class="">
+                      <span
+                        class={`${pathname == concept.path ? "font-bold" : null} text-primary dark:text-dark-primary`}
+                      >
+                        {concept.label}
+                      </span>
+                    </a>
+                    {pathname == concept.path ? (
+                      <Svg name="tick" iconStyle="text-main-purple " />
+                    ) : (
+                      <span />
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+        ))
+      }
+    </div>
+  </details>
 </nav>
 
 <style>
   details > summary .icon {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
     transition: transform 100ms linear;
   }
 
   details[open] > summary .icon {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     transition: transform 100ms linear;
   }
 </style>

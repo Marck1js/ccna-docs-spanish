@@ -1,5 +1,5 @@
 ---
-import { sidebarConfig } from "../config/sidebarConfig";
+import {sidebarConfigTopic} from "../config/sidebarConfig";
 import Acordeon from "./ui/Acordeon.astro";
 import TagA from "./ui/TagA.astro";
 const {pathname} = Astro.props
@@ -10,13 +10,13 @@ const {pathname} = Astro.props
     class="sidebar-width w-fit py-[20px] h-auto pr-[10px] overflow-auto border-r-[1px] border-border dark:border-dark-border"
 >
     {
-        sidebarConfig.map((section) => (
+        sidebarConfigTopic.map((section) => (
             <Acordeon title={section.name}>
-                {section.tags.map((tag, index) => (
+                {section.route.map(({concept}) => (
                     <TagA
                         pathname={pathname}
-                        title={tag}
-                        href={section.paths && section.paths[index]}
+                        title={concept.label}
+                        href={concept.path}
                     />
                 ))}
             </Acordeon>
