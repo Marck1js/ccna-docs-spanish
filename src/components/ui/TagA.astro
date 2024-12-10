@@ -2,12 +2,12 @@
 const { title, href, pathname } = Astro.props;
 
 const currentSite = href == pathname
-
+const light = `${currentSite ? 'bg-main-purple text-white font-bold' :'text-gray-500 hover:bg-main-purple-hover hover:text-white'} `
 ---
 
 <a
   href={href}
-  class={`text-option dark:text-dark-option ${currentSite ? 'bg-active text-white focus:bg-inherit  dark:focus:bg-inherit dark:bg-dark-active dark:text-white font-bold  hover:bg-active': null } hover:text-main dark:hover:text-dark-main hover:bg-slate-400 dark:hover:bg-[#2c294a]  py-[4px] pl-[10px] rounded-md my-[2px]`}
+  class={` ${light} py-[4px] pl-[10px] rounded-md my-[2px]`}
 >
   {title}
 </a>

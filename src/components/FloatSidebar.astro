@@ -1,7 +1,7 @@
 ---
 import Svg from "../lib/Svg.astro";
 import { sidebarConfigTopic } from "../config/sidebarConfig";
-const { pathname } = Astro.props;
+const { pathname, current } = Astro.props;
 
 interface Topic {
   name: string;
@@ -28,9 +28,18 @@ interface Topic {
           <Svg name="chevronDown" iconStyle="darkmode" />
         </div>
       </div>
-      <span class="darkmode">{pathname}</span>
+      <span class="darkmode">
+        <!-- {
+          sidebarConfigTopic
+            .map((topic) =>
+              topic.route.find((route) => route.concept.path === pathname)
+            )
+            .find((route) => route)?.concept.label || "custom"
+        } -->
+      {current}
+      </span>
     </summary>
-    <div class="fixed w-full">
+    <div class=" w-full ">
       {
         sidebarConfigTopic?.map((section) => (
           <ul class="bg-main dark:bg-dark-main">
