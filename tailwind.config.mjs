@@ -31,6 +31,7 @@ export default {
       },
       height: {
         fix: "calc(100vh - 64px)",
+        half: "calc(100vh /2)"
       },
     },
     screens: {

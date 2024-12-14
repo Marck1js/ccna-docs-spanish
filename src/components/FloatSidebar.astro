@@ -18,7 +18,7 @@ interface Topic {
 <nav
   class="sticky float-sidebar-width h-[40px] bg-main dark:bg-dark-main border-b-[1px] border-border dark:border-dark-border"
 >
-  <details class="">
+  <details class="" open>
     <summary class="list-none flex gap-2 items-center h-[40px] px-[20px]">
       <div
         class="h-[30px] flex items-center gap-2 border-[1px] border-border pl-[10px] rounded-md"
@@ -28,7 +28,10 @@ interface Topic {
           <Svg name="chevronDown" iconStyle="darkmode" />
         </div>
       </div>
-      <span class="darkmode">
+      <span
+        title={current}
+        class="darkmode whitespace-nowrap text-ellipsis text-nowrap overflow-hidden"
+      >
         <!-- {
           sidebarConfigTopic
             .map((topic) =>
@@ -36,42 +39,44 @@ interface Topic {
             )
             .find((route) => route)?.concept.label || "custom"
         } -->
-      {current}
+        {current}
       </span>
     </summary>
-    <div class=" w-full ">
-      {
-        sidebarConfigTopic?.map((section) => (
-          <ul class="bg-main dark:bg-dark-main">
-            <li class="">
-              <a
-                href={section.path ? section.path : "#"}
-                class="px-[10px] flex items-center text-primary dark:text-dark-primary h-[40px] border-b border-border"
-              >
-                {section.name}
-              </a>
-              <ul class="px-[25px]">
-                {section.route?.map(({ concept }) => (
-                  <li class="flex justify-between items-center h-[45px] border-b border-main-purple-hover">
-                    <a href={concept.path} class="">
-                      <span
-                        class={`${pathname == concept.path ? "font-bold" : null} text-primary dark:text-dark-primary`}
-                      >
-                        {concept.label}
-                      </span>
-                    </a>
-                    {pathname == concept.path ? (
-                      <Svg name="tick" iconStyle="text-main-purple " />
-                    ) : (
-                      <span />
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          </ul>
-        ))
-      }
+    <div class="w-full  flex flex-col">
+      <div class="  h-half overflow-auto border-b-4 border-border ">
+        {
+          sidebarConfigTopic?.map((section) => (
+            <ul class="bg-main dark:bg-dark-main">
+              <li class="">
+                <a
+                  href={section.path ? section.path : "#"}
+                  class="px-[10px] flex items-center text-primary dark:text-dark-primary h-[40px] border-b border-border"
+                >
+                  {section.name}
+                </a>
+                <ul class="px-[25px]">
+                  {section.route?.map(({ concept }) => (
+                    <li class="flex justify-between items-center h-[45px] border-b border-main-purple-hover last:border-none">
+                      <a href={concept.path} class="">
+                        <span
+                          class={`${pathname == concept.path ? "font-bold" : null} text-primary dark:text-dark-primary`}
+                        >
+                          {concept.label} 
+                        </span>
+                      </a>
+                      {pathname == concept.path ? (
+                        <Svg name="tick" iconStyle="text-main-purple " />
+                      ) : (
+                        <span />
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            </ul>
+          ))
+        }
+      </div>
     </div>
   </details>
 </nav>
