@@ -9,7 +9,9 @@
       @apply  text-[30px] font-bold pl-[2rem] my-[25px];
     }
     .markdown-content h1,
-    .markdown-content h2,
+    .markdown-content h2 {
+        @apply  text-[24px] font-bold pl-[2rem] my-[25px];
+    }
     .markdown-content h3,
     .markdown-content h4,
     .markdown-content h5,
