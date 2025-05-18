@@ -1,0 +1,30 @@
+---
+import "../../styles/global.css";
+import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  // Obtengo la coleccion en el path ./pages/fundamentos/*
+  const blogEntries = await getCollection("roadmap");
+  // Devuelvo y creo las rutas dinamicas, de acuerdo a los archivo .md, y paso como props
+  // dicho archivo .md
+  return blogEntries.map((entry) => ({
+    params: { docs: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { docs } = Astro.params;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data?.title}>
+  <MarkdownPostLayout title={entry.data?.title}>
+    <Content />
+  </MarkdownPostLayout>
+  <!-- Este content se borra, solo esta para ver las diferencias con el markdown -->
+  <p slot="aside">Welcome to this page</p>
+</Layout>

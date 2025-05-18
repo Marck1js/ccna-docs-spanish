@@ -13,6 +13,18 @@ interface Topic {
 
 export const sidebarConfigTopic: Topic[] = [
   {
+    name: 'Roadmap',
+    path: '/roadmap',
+    route: [
+      {
+        concept: {
+          label: 'Guia de estudio 2025',
+          path: '/roadmap/roadmap'  
+        }
+      }
+    ]
+  },
+  {
     name: "Fundamentals of Networking",
     path: "/fundamentos",
     route: [
@@ -46,6 +58,12 @@ export const sidebarConfigTopic: Topic[] = [
     name: "Network Access",
     path: "",
     route: [
+      {
+        concept: {
+          label: "OSPF",
+          path: "/network-access/ospf"
+        }
+      },
       {
         concept: {
           label: "Configuración de switches",
